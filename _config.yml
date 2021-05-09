@@ -1,48 +1,76 @@
-title: Cookie
-description: > # this means to ignore newlines until "show_excerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-url: https://cookie-demo.netlify.app # change this URL, this is needed for generating right sitemap
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-permalink: "/blog/:title/"
+title: Casa all'Alpe
+email: info@casaallalpe.it
+description: >- # this means to ignore newlines until "baseurl:"
+  La Fattoria Casa all'Alpe è un podere sulle montagne del Mugello. Un luogo
+  dove l’agricoltura è multifunzionale, capace di fornire servizi, creare
+  legami, curare il territorio e produrre cibo di qualità.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://casaallalpe.it" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+# github_username:  jekyll
 
+# Build settings
+# theme: minima
+remote_theme: chrisrhymes/bulma-clean-theme
 plugins:
   - jekyll-feed
-  - jekyll-postcss
-  - jekyll-seo-tag
-  - jekyll-purgecss
-  - jekyll-sitemap
-  - jekyll-minifier
-
-css_dir: "assets/css" # defaults to "css"
-
-highlighter: rouge
+permalink: pretty
+paginate: 5
+paginate_path: "/blog/page:num"
 
 collections:
-  posts:
+  products: 
     output: true
-    permalink: "/blog/:title"
-  pages:
-    output: true
-    permalink: "/:title"
+    layout: product
+    image: https://via.placeholder.com/800x600
+    show_sidebar: false
 
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
 
-soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      hero_image: /assets/header.jpg
+      hero_darken: true
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - package.json
-  - package-lock.json
-  - README.md
-  - postcss.config.js
-  - purgecss.config.js
-  - tailwind.config.js
-  - .gitignore
-  - vendor
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
